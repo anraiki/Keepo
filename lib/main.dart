@@ -14,22 +14,20 @@ class KeepoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: HomePage(title: 'Keepo'),
+      home: TransactionsPage(title: 'Keepo'),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+class TransactionsPage extends StatefulWidget {
+  TransactionsPage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _TransactionsPageState createState() => _TransactionsPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
+class _TransactionsPageState extends State<TransactionsPage> {
 
   @override
   void initState() {
