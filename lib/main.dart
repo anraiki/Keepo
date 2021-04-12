@@ -32,17 +32,6 @@ class _TransactionsPageState extends State<TransactionsPage> {
   @override
   void initState() {
     super.initState();
-    // _loadDatabase();
-  }
-
-  // Future<void> _loadDatabase() async {
-  //   var db = await openDatabase('easyBee.db');
-  // }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
   }
 
   @override
@@ -128,12 +117,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
             ],
           ),
         ),
-      ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
+      )
     );
   }
 
@@ -153,14 +137,4 @@ class _TransactionsPageState extends State<TransactionsPage> {
       ),
     );
   }
-}
-
-class Transaction {
-  final int id;
-  final String note;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-  final int type;
-
-  Transaction({this.id, this.note, this.createdAt, this.updatedAt, this.type});
 }
