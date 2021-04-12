@@ -51,7 +51,7 @@ class DBProvider {
     final db = await database;
     var res = await db.rawQuery("SELECT * FROM transactions ORDER BY `id` DESC");
     if( res.length == 0 ) {
-      return null;
+      return [];
     } else {
       return res;
     }
