@@ -32,6 +32,14 @@ class _TransactionsPageState extends State<TransactionsPage> {
   @override
   void initState() {
     super.initState();
+    getTransactions();
+  }
+
+  Future<List> getTransactions() async {
+    print("Getting Transaction");
+    var transactions = await DBProvider.db.getTransactions();
+    print(transactions);
+    return [];
   }
 
   @override
@@ -111,6 +119,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                   child: Text("Add"),
                   onPressed: (){
                     print("Hello");
+                    DBProvider.db.transactionAdd("Test");
                   },
                 )
               ),
@@ -121,7 +130,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
     );
   }
 
-  Widget form() {
+  Widget transactionList() {
     return Scaffold(
       body: Center(
         child: Column(
