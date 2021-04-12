@@ -2,32 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:easybee/db/database.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(KeepoApp());
 }
 
-class MyApp extends StatelessWidget {
+class KeepoApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Easy B Keeping',
+      title: 'Keepo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: MyHomePage(title: 'EZB Keeping'),
+      home: HomePage(title: 'Keepo'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   int _counter = 0;
 
 
