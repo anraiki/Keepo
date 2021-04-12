@@ -36,14 +36,14 @@ class DBProvider {
   transactionAdd( String name ) async {
     final db      = await database;
     DateTime now  = new DateTime.now();
-    var checkID   = await db.rawQuery("SELECT * FROM transactions ORDER BY id DESC LIMIT 0, 1");
-    int id        = checkID.length == 0 ? 1 : checkID[0] ;
-    
+    var checkID   = await db.rawQuery("SELECT ID FROM transactions ORDER BY id DESC LIMIT 0, 1");
+    int id        = checkID.length == 0 ? 1 : checkID[0]["id"] + 1;
+
     var res = await db.rawInsert(
       'INSERT INTO transactions (id, name, createdAt, updatedAt) VALUES (?, ?, ?, ?)', 
-      [id, name, now.toLocal(), now.toLocal()]
+      [id, name, now.toIso8601String(), now.toIso8601String()]
     );
-    
+
     return res;
   }
 
